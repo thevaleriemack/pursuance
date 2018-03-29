@@ -1,6 +1,7 @@
 const initialState = {
   name: '',
   mission: '',
+  about: '',
   is_encrypted: false,
   isPending: false,
   redirect: false

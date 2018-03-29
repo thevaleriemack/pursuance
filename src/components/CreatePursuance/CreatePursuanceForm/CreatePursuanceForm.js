@@ -41,7 +41,7 @@ class CreatePursuanceForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { createPursuance, postPursuance } = this.props;
-    const { mission, name } = createPursuance;
+    const { mission, name, about } = createPursuance;
     if (name.length === 0) {
       return toast.error('Please enter pursuance Name!');
     }
@@ -54,7 +54,7 @@ class CreatePursuanceForm extends Component {
 
   render(){
     const { toggleSettingsInfoModal, createPursuance } = this.props;
-    const { name, mission, isPending } = createPursuance;
+    const { name, mission, about, isPending } = createPursuance;
     return (
       <form className="create-pursuance-form" autoComplete="off">
 
@@ -89,6 +89,16 @@ class CreatePursuanceForm extends Component {
           className="create-pursuance-input"
           name={'mission'}
           value={mission}
+          onChange={this.onChange}
+        />
+        <textarea
+          type="text"
+          placeholder={"Describe your status, goals, progress, and "
+          + "next steps, so that new members know how to get involved! "
+          + "You can always change this later."}
+          className="create-pursuance-input"
+          name={'about'}
+          value={about}
           onChange={this.onChange}
         />
         <div className="create-pursuance-setting">
